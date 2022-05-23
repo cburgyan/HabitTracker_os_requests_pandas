@@ -63,9 +63,15 @@ update_date_full = datetime.datetime(year=2022, month=5, day=20)
 update_date_wo_hours_and_minutes = update_date_full.strftime("%Y%m%d")
 UPDATE_PIXEL_ENDPOINT = f"{POST_PIXEL_PIXELA_ENDPOINT}/{update_date_wo_hours_and_minutes}"
 
-# Update Pixel
-update_pixel_response = requests.put(url=UPDATE_PIXEL_ENDPOINT,
-                                     headers=pixela_headers,
-                                     json=update_pixel_parameters)
+# # Update Pixel
+# update_pixel_response = requests.put(url=UPDATE_PIXEL_ENDPOINT,
+#                                      headers=pixela_headers,
+#                                      json=update_pixel_parameters)
+#
+# print(update_pixel_response.text)
 
-print(update_pixel_response.text)
+
+# Delete Pixel
+delete_pixel_response = requests.delete(url=UPDATE_PIXEL_ENDPOINT, headers=pixela_headers)
+
+print(delete_pixel_response.text)
